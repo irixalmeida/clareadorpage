@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Clareador Amazolé - Produto natural para cuidados com a pele usando ingredientes da Amazônia. Garantia de satisfação!" />
+    <title>Clareador Amazolé - Transforme sua pele</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body { 
+        font-family: 'Inter', sans-serif; 
+        scroll-behavior: smooth;
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .text-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .floating {
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      .glow {
+        box-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+        animation: glow-pulse 2s infinite;
+      }
+      @keyframes glow-pulse {
+        0%, 100% { box-shadow: 0 0 30px rgba(102, 126, 234, 0.3); }
+        50% { box-shadow: 0 0 50px rgba(102, 126, 234, 0.6); }
+      }
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .card-hover:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+      }
+      .parallax {
+        transform: translateZ(0);
+        will-change: transform;
+      }
+      .section-padding {
+        padding: 120px 0;
+      }
+      
+      /* Banner fixo no topo */
+      .top-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        color: white;
+        text-align: center;
+        padding: 12px 20px;
+        font-weight: 700;
+        font-size: 16px;
+        z-index: 9999;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        animation: banner-pulse 2s infinite;
+      }
+      
+      @keyframes banner-pulse {
+        0%, 100% { 
+          background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+          transform: scale(1);
+        }
+        50% { 
+          background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+          transform: scale(1.01);
+        }
+      }
+      
+      /* Compensar o espaço do banner fixo */
+      body {
+        padding-top: 50px;
+      }
+      
+      @media (max-width: 768px) {
+        .top-banner {
+          font-size: 14px;
+          padding: 10px 15px;
+        }
+        body {
+          padding-top: 45px;
+        }
+      }
+      @media (max-width: 768px) {
+        .section-padding {
+          padding: 80px 0;
+        }
+      }
+      
+      /* WhatsApp Modal Mobile Improvements */
+      @media (max-width: 640px) {
+        #whatsappModal {
+          padding: 1rem;
+        }
+        #whatsappModal > div {
+          max-width: 100%;
+          margin: 0;
+        }
+      }
+      
+      /* Modal transition states */
+      #whatsappModal.opacity-100 {
+        opacity: 1;
+      }
+      
+      #whatsappModal > div.scale-100 {
+        transform: scale(1);
+      }
+      .bg-pattern {
+        background-image: radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+      }
+    </style>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  </head>
+  <body class="bg-white text-gray-900 overflow-x-hidden">
+    
+    <!-- Banner Fixo Topo -->
+    <div class="top-banner">
+      🚚 PAGUE NA ENTREGA - RECEBA EM CASA SEM RISCO! 💳 ACEITO PIX, CARTÃO E DINHEIRO
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="relative min-h-screen hero-gradient flex items-center justify-center overflow-hidden">
+      <!-- Animated Background Elements -->
+      <div class="absolute inset-0">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl floating"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-300 opacity-10 rounded-full blur-3xl floating" style="animation-delay: -2s;"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-blue-400 to-purple-500 opacity-5 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center text-white">
+        <div class="space-y-8">
+          <!-- Hero Title -->
+          <h1 class="text-4xl md:text-6xl font-black leading-tight">
+            Revele uma pele mais luminosa e uniforme com o<br>
+            <span class="text-yellow-300 drop-shadow-2xl">poder da Amazônia</span>
+          </h1>
+          
+          <!-- Subtitle -->
+          <p class="text-2xl md:text-3xl font-light max-w-4xl mx-auto opacity-95 leading-relaxed">
+            Um cuidado de origem natural para realçar a beleza da sua pele.
+          </p>
+          
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+            <a href="#oferta" class="group inline-flex items-center px-12 py-5 bg-yellow-400 text-gray-900 font-bold text-xl rounded-full shadow-2xl hover:bg-yellow-300 transform hover:scale-110 transition-all duration-500 glow">
+              <span class="mr-3 text-2xl">🌿</span> 
+              CONHECER O PRODUTO - PAGUE NA ENTREGA
+              <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+            <a href="#depoimentos" class="inline-flex items-center px-10 py-5 bg-transparent border-3 border-white text-white font-bold text-xl rounded-full hover:bg-white hover:text-gray-900 transition-all duration-500">
+              <span class="mr-3 text-2xl">⭐</span> VER AVALIAÇÕES
+            </a>
+          </div>
+          
+          <!-- Trust Badge -->
+          <div class="pt-12">
+            <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1732842530511_compra-segura-white.png.webp?alt=media&token=vtk_74Itjo93fhZg58rgDfsqK6gdjhG2" alt="Compra 100% Segura" class="mx-auto w-56 opacity-90" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+        <div class="flex flex-col items-center">
+          <span class="text-sm mb-2 opacity-70">Descubra mais</span>
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section-padding bg-gradient-to-br from-gray-50 to-gray-100 bg-pattern">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <!-- Text Content -->
+          <div class="space-y-8">
+            <div>
+              <h2 class="text-5xl md:text-6xl font-black mb-8 text-gradient leading-tight">
+                O cuidado natural que sua pele merece
+              </h2>
+              <p class="text-xl text-gray-600 leading-relaxed">
+                Descubra nossa fórmula com ingredientes selecionados da Amazônia
+              </p>
+            </div>
+            
+            <!-- Benefits List -->
+            <div class="space-y-6">
+              <div class="flex items-start p-6 bg-white rounded-3xl shadow-xl card-hover border border-gray-100">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                  <span class="text-white text-2xl">✨</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl text-gray-900 mb-2">Promove um tom de pele visivelmente mais uniforme</h3>
+                  <p class="text-gray-600 leading-relaxed">Nossa fórmula foi desenvolvida com ingredientes naturais que ajudam a suavizar a aparência de hiperpigmentações, revelando uma pele mais radiante.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start p-6 bg-white rounded-3xl shadow-xl card-hover border border-gray-100">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                  <span class="text-white text-2xl">🌿</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl text-gray-900 mb-2">Fórmula com ativos da natureza</h3>
+                  <p class="text-gray-600 leading-relaxed">Um produto cosmético que une o poder de ingredientes naturais selecionados para um cuidado gentil e eficaz.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start p-6 bg-white rounded-3xl shadow-xl card-hover border border-gray-100">
+                <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                  <span class="text-white text-2xl">🎯</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl text-gray-900 mb-2">Ideal para o cuidado de áreas com tonalidade irregular</h3>
+                  <p class="text-gray-600 leading-relaxed">Indicado para melhorar o aspecto da pele em regiões como rosto, axilas, virilhas e outras áreas com diferenças de tonalidade.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start p-6 bg-white rounded-3xl shadow-xl card-hover border border-gray-100">
+                <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                  <span class="text-white text-2xl">🔄</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl text-gray-900 mb-2">Resultados que melhoram com o uso contínuo</h3>
+                  <p class="text-gray-600 leading-relaxed">Para obter uma pele com aparência renovada e uniforme, recomendamos incluir o produto em sua rotina diária de cuidados.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product Image -->
+          <div class="relative flex justify-center">
+            <div class="relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-3xl blur-3xl opacity-20 scale-110"></div>
+              <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1753450778673_3332bf38-3297-4735-853a-1ad21b72957b.png.webp?alt=media&token=vtk_Eabq0ollY8QXVIuq0aFiURgLiA32" alt="Clareador Amazolé" class="relative rounded-3xl shadow-2xl floating max-w-md w-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Types Section -->
+    <section class="section-padding bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-20">
+          <h2 class="text-5xl md:text-6xl font-black mb-8 text-gradient leading-tight">
+            Desenvolvido para as necessidades da sua pele
+          </h2>
+          <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Nossa fórmula com ingredientes naturais foi pensada para melhorar a aparência e uniformizar o tom de diferentes áreas do corpo.
+          </p>
+        </div>
+        
+        <!-- Problem Types Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div class="group relative overflow-hidden rounded-3xl shadow-2xl card-hover bg-white">
+            <div class="aspect-square relative">
+              <img src="destaque-axila.jpg" alt="Axilas com tom uniforme" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="font-bold text-xl mb-2">Axilas com tom uniforme</h3>
+              <p class="text-sm opacity-90 leading-relaxed">Ideal para o cuidado da pele das axilas, ajudando a manter um tom visivelmente mais uniforme e uma aparência saudável.</p>
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden rounded-3xl shadow-2xl card-hover bg-white">
+            <div class="aspect-square relative">
+              <img src="pele-vicosa-rosto-mulher_600x600.webp" alt="Uniformidade para o rosto" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="font-bold text-xl mb-2">Uniformidade para o rosto</h3>
+              <p class="text-sm opacity-90 leading-relaxed">Auxilia no cuidado da pele com hiperpigmentação facial, promovendo uma aparência mais uniforme e radiante.</p>
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden rounded-3xl shadow-2xl card-hover bg-white">
+            <div class="aspect-square relative">
+              <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1753455280106_imagem-57.webp.webp?alt=media&token=vtk_Eabq0ollY8QXVIuq0aFiURgLiA32" alt="Virilhas Escuras" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="font-bold text-xl mb-2">Cuidado para a área do biquíni</h3>
+              <p class="text-sm opacity-90 leading-relaxed">Perfeito para a rotina de cuidados com a região da virilha, ajudando a manter a pele com uma tonalidade e textura suaves.</p>
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden rounded-3xl shadow-2xl card-hover bg-white">
+            <div class="aspect-square relative">
+              <img src="liftingdecoxa.jpg" alt="Pele lisa e bonita" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="font-bold text-xl mb-2">Pele com aparência mais lisa</h3>
+              <p class="text-sm opacity-90 leading-relaxed">Ajuda a melhorar o aspecto da pele com tendência a pelos encravados e vermelhidão, deixando-a com uma aparência mais lisa e macia.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="text-center">
+          <a href="#oferta" class="inline-flex items-center px-12 py-5 hero-gradient text-white font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-500">
+            <span class="mr-3 text-2xl">💫</span> CONHECER PRODUTO - PAGUE NA ENTREGA
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formula Section -->
+    <section class="section-padding bg-gradient-to-br from-gray-50 to-gray-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-20">
+          <h2 class="text-5xl md:text-6xl font-black mb-8 text-gradient leading-tight">
+            Fórmula única e exclusiva
+          </h2>
+          <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Ingredientes naturais da Amazônia em uma fórmula única, desenvolvida com anos de pesquisa
+          </p>
+        </div>
+        
+        <!-- Ingredients Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div class="bg-white p-10 rounded-3xl shadow-2xl card-hover text-center border border-gray-100">
+            <div class="mb-8">
+              <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-green-400 to-emerald-500 shadow-xl flex items-center justify-center mb-6">
+                <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1725145041592_esclusivo-1.webp.webp?alt=media&token=vtk_74Itjo93fhZg58rgDfsqK6gdjhG2" alt="Mulateiro" class="w-16 h-16 rounded-full" />
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Mulateiro</h3>
+            <p class="text-gray-600 leading-relaxed">Planta amazônica com poderosa ação antioxidante. Auxilia na renovação da pele e ajuda a uniformizar seu tom naturalmente.</p>
+          </div>
+          
+          <div class="bg-white p-10 rounded-3xl shadow-2xl card-hover text-center border border-gray-100">
+            <div class="mb-8">
+              <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 shadow-xl flex items-center justify-center mb-6">
+                <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1725146210589_esclusivo-2.webp.webp?alt=media&token=vtk_74Itjo93fhZg58rgDfsqK6gdjhG2" alt="Dolomita" class="w-16 h-16 rounded-full" />
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Dolomita</h3>
+            <p class="text-gray-600 leading-relaxed">Mineral rico em cálcio e magnésio. Contribui para a renovação e melhora da aparência da pele, auxiliando a uniformizar o tom de forma natural.</p>
+          </div>
+          
+          <div class="bg-white p-10 rounded-3xl shadow-2xl card-hover text-center border border-gray-100">
+            <div class="mb-8">
+              <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-purple-400 to-pink-500 shadow-xl flex items-center justify-center mb-6">
+                <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1725146219586_esclusivo-3.webp.webp?alt=media&token=vtk_74Itjo93fhZg58rgDfsqK6gdjhG2" alt="Óleo de Melaleuca" class="w-16 h-16 rounded-full" />
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Óleo de Melaleuca</h3>
+            <p class="text-gray-600 leading-relaxed">Conhecido por seu efeito purificante, ajuda a manter a pele com aspecto limpo e suave. Proporciona uma sensação de alívio e conforto, deixando a pele livre de sensações de irritação.</p>
+          </div>
+          
+          <div class="bg-white p-10 rounded-3xl shadow-2xl card-hover text-center border border-gray-100">
+            <div class="mb-8">
+              <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-orange-400 to-red-500 shadow-xl flex items-center justify-center mb-6">
+                <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1725146226587_esclusivo-4.webp.webp?alt=media&token=vtk_74Itjo93fhZg58rgDfsqK6gdjhG2" alt="Argila Branca" class="w-16 h-16 rounded-full" />
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Argila Branca</h3>
+            <p class="text-gray-600 leading-relaxed">Suaviza e ajuda a uniformizar o tom naturalmente. Controla a oleosidade sem agredir, sendo ideal para peles sensíveis.</p>
+          </div>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="text-center">
+          <button onclick="openWhatsAppModal()" class="inline-flex items-center px-12 py-5 bg-green-500 text-white font-bold text-xl rounded-full shadow-2xl hover:bg-green-600 transform hover:scale-110 transition-all duration-500">
+            <span class="mr-3 text-2xl">💬</span> FALAR NO WHATSAPP
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="section-padding bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-20">
+          <h2 class="text-5xl md:text-6xl font-black mb-8 text-gradient leading-tight">
+            A confiança de milhares de clientes
+          </h2>
+          <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Conheça o que nossas clientes têm a dizer sobre o Clareador Amazolé e como ele contribuiu para a aparência da sua pele.
+          </p>
+        </div>
+        
+        <!-- Testimonials Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="group relative overflow-hidden rounded-3xl shadow-2xl card-hover">
+            <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1753457046701_whatsapp-image-2025-07-08-at-184606.jpeg.webp?alt=media&token=vtk_Eabq0ollY8QXVIuq0aFiURgLiA32" alt="Resultado real" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+              <p class="text-white p-6 font-semibold">Experiência positiva com o produto!</p>
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden rounded-3xl shadow-2xl card-hover">
+            <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1753457039382_whatsapp-image-2025-07-08-at-184606-1.jpeg.webp?alt=media&token=vtk_Eabq0ollY8QXVIuq0aFiURgLiA32" alt="Resultado real" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+              <p class="text-white p-6 font-semibold">Melasma totalmente controlado!</p>
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden rounded-3xl shadow-2xl card-hover">
+            <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1753461725177_whatsapp-image-2023-12-28-at-023423.jpeg.webp?alt=media&token=vtk_Eabq0ollY8QXVIuq0aFiURgLiA32" alt="Resultado real" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+              <p class="text-white p-6 font-semibold">Axilas clarinhas e uniformes!</p>
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden rounded-3xl shadow-2xl card-hover">
+            <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1753461893106_whatsapp-image-2025-02-18-at-112958-1.jpeg.webp?alt=media&token=vtk_Eabq0ollY8QXVIuq0aFiURgLiA32" alt="Resultado real" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+              <p class="text-white p-6 font-semibold">Autoestima renovada!</p>
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden rounded-3xl shadow-2xl card-hover">
+            <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1753461900478_whatsapp-image-2023-12-26-at-023421.jpeg.webp?alt=media&token=vtk_Eabq0ollY8QXVIuq0aFiURgLiA32" alt="Resultado real" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+              <p class="text-white p-6 font-semibold">Virilhas sem manchas!</p>
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden rounded-3xl shadow-2xl card-hover">
+            <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1753461922224_whatsapp-image-2025-07-25-at-121755.jpeg.webp?alt=media&token=vtk_Eabq0ollY8QXVIuq0aFiURgLiA32" alt="Resultado real" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+              <p class="text-white p-6 font-semibold">Resultado incrível!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="section-padding hero-gradient text-white relative overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-yellow-300 opacity-10 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div class="relative max-w-5xl mx-auto px-6 text-center">
+        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-16 border border-white/20">
+          <h2 class="text-5xl md:text-6xl font-black mb-8 leading-tight">
+            Garantia total por <span class="text-yellow-300">90 dias</span>
+          </h2>
+          
+          <p class="text-2xl mb-12 opacity-95 max-w-4xl mx-auto leading-relaxed">
+            Confiamos na qualidade do Clareador Amazolé e oferecemos garantia: 
+            <strong>Se você não estiver 100% satisfeita até 90 dias, devolvemos todo seu dinheiro!</strong>
+          </p>
+          
+          <!-- Guarantee Icons -->
+          <div class="flex justify-center items-center gap-8 mb-12">
+            <div class="flex flex-col items-center">
+              <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                <span class="text-4xl">🛡️</span>
+              </div>
+              <span class="font-semibold">100% Seguro + PAGUE NA ENTREGA</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                <span class="text-4xl">💯</span>
+              </div>
+              <span class="font-semibold">Satisfação Garantida</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                <span class="text-4xl">⚡</span>
+              </div>
+              <span class="font-semibold">Resultados Rápidos</span>
+            </div>
+          </div>
+          
+          <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1724977615616_compra-segura.png.webp?alt=media&token=vtk_74Itjo93fhZg58rgDfsqK6gdjhG2" alt="Compra Garantida" class="mx-auto w-56 opacity-90" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section id="oferta" class="section-padding bg-gray-900 text-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div class="relative max-w-7xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-20">
+          <h2 class="text-5xl md:text-6xl font-black mb-8 leading-tight">
+            <span class="text-yellow-400">Oferta Especial</span> por tempo limitado
+          </h2>
+          <p class="text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed">
+            Últimas unidades com desconto especial. Garanta já o seu produto!
+          </p>
+        </div>
+        
+        <!-- Destaque Pague na Entrega -->
+        <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-3xl p-8 mb-16 text-center shadow-2xl">
+          <div class="max-w-4xl mx-auto">
+            <h3 class="text-4xl font-black text-white mb-4">
+              🚚 PAGUE NA ENTREGA 🚚
+            </h3>
+            <p class="text-xl text-white mb-6 leading-relaxed">
+              <strong>ZERO RISCO!</strong> Você só paga quando receber o produto em suas mãos. 
+              Aceitamos PIX, Cartão de Débito/Crédito e Dinheiro na entrega.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-white">
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">💳</span>
+                <span class="font-semibold">PIX</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">💰</span>
+                <span class="font-semibold">Dinheiro</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">💸</span>
+                <span class="font-semibold">Cartão</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Products Grid -->
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+          <!-- Produto 1 -->
+          <div class="bg-white text-gray-900 rounded-3xl shadow-2xl overflow-hidden card-hover border-4 border-transparent hover:border-yellow-400 transition-all duration-500">
+            <div class="p-8 text-center">
+              <div class="mb-6">
+                <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1755874050096_design-sem-nome-79.png.webp?alt=media&token=vtk_Eabq0ollY8QXVIuq0aFiURgLiA32" alt="1 Clareador" class="w-40 mx-auto mb-4" />
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-gray-900">1 Clareador Amazolé</h3>
+              <p class="text-gray-600 mb-6">Ideal para testar e ver os primeiros resultados</p>
+              <div class="mb-6">
+                <span class="text-gray-500 line-through text-lg">De R$ 189,99</span>
+                <span class="block text-4xl font-black text-gray-900 mb-2">R$ 137,00</span>
+                <span class="text-green-600 font-semibold">Economia de R$ 52,99</span>
+              </div>
+              <a href="https://entrega.logzz.com.br/pay/mem8yv650/1-frasco-principal" target="_blank" class="block w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-4 rounded-2xl hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 mb-4">
+                COMPRAR AGORA - PAGUE NA ENTREGA
+              </a>
+              <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1706276205221_paymentsmethods.webp.webp?alt=media&token=vtk_skdQivcu7ggWloPIOHG0NDuJ5i83" alt="Formas de pagamento" class="mx-auto w-40" />
+            </div>
+          </div>
+          
+          <!-- Produto 2 - MAIS POPULAR -->
+          <div class="bg-gradient-to-br from-yellow-400 to-orange-500 text-gray-900 rounded-3xl shadow-2xl overflow-hidden card-hover border-4 border-yellow-300 relative transform scale-105">
+            <!-- Badge de Mais Popular -->
+            <div class="absolute top-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold">
+              MAIS POPULAR
+            </div>
+            <div class="p-8 text-center pt-12">
+              <div class="mb-6">
+                <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1756257961375_design-sem-nome-85.png.webp?alt=media&token=vtk_Eabq0ollY8QXVIuq0aFiURgLiA32" alt="Kit Completo" class="w-40 mx-auto mb-4" />
+              </div>
+              <h3 class="text-2xl font-bold mb-4">Kit Completo</h3>
+              <p class="mb-6">Clareador + Sabonete em Pasta para resultados máximos</p>
+              <div class="mb-6">
+                <span class="text-gray-700 line-through text-lg">De R$ 279,98</span>
+                <span class="block text-4xl font-black mb-2">R$ 197,00</span>
+                <span class="text-green-700 font-semibold">Economia de R$ 82,98</span>
+              </div>
+              <a href="https://entrega.logzz.com.br/pay/mem8yv650/2-frasco-19700-principal" target="_blank" class="block w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 mb-4">
+                COMPRAR AGORA - PAGUE NA ENTREGA
+              </a>
+              <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1706276205221_paymentsmethods.webp.webp?alt=media&token=vtk_skdQivcu7ggWloPIOHG0NDuJ5i83" alt="Formas de pagamento" class="mx-auto w-40 opacity-80" />
+            </div>
+          </div>
+          
+          <!-- Produto 3 -->
+          <div class="bg-white text-gray-900 rounded-3xl shadow-2xl overflow-hidden card-hover border-4 border-transparent hover:border-purple-400 transition-all duration-500">
+            <div class="p-8 text-center">
+              <div class="mb-6">
+                <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1755874023098_design-sem-nome-78.png.webp?alt=media&token=vtk_Eabq0ollY8QXVIuq0aFiURgLiA32" alt="3 Clareadores" class="w-40 mx-auto mb-4" />
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-gray-900">3 Clareadores</h3>
+              <p class="text-gray-600 mb-6">Tratamento completo para resultados duradouros</p>
+              <div class="mb-6">
+                <span class="text-gray-500 line-through text-lg">De R$ 569,97</span>
+                <span class="block text-4xl font-black text-gray-900 mb-2">R$ 297,00</span>
+                <span class="text-green-600 font-semibold">Economia de R$ 272,97</span>
+              </div>
+              <a href="https://entrega.logzz.com.br/pay/mem8yv650/3-frasco-29700" target="_blank" class="block w-full bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold py-4 rounded-2xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 mb-4">
+                COMPRAR AGORA - PAGUE NA ENTREGA
+              </a>
+              <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1706276205221_paymentsmethods.webp.webp?alt=media&token=vtk_skdQivcu7ggWloPIOHG0NDuJ5i83" alt="Formas de pagamento" class="mx-auto w-40" />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Trust Indicators -->
+        <div class="text-center">
+          <div class="flex flex-wrap justify-center items-center gap-8 mb-8 opacity-80">
+            <div class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Entrega garantida</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Pagamento 100% seguro + PAGUE NA ENTREGA</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Garantia de 90 dias</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-black mb-6 text-gradient">
+            Perguntas Frequentes
+          </h2>
+          <p class="text-xl text-gray-600">Tire todas suas dúvidas sobre o Clareador Amazolé</p>
+        </div>
+        
+        <!-- FAQ Items -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-8">
+            <div class="bg-gray-50 p-8 rounded-2xl">
+              <h3 class="font-bold text-xl text-gray-900 mb-4">🛡️ Qual é a garantia do produto?</h3>
+              <p class="text-gray-700 leading-relaxed">Oferecemos uma garantia de 90 dias. Se não estiver satisfeita, devolvemos 100% do seu dinheiro!</p>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-2xl">
+              <h3 class="font-bold text-xl text-gray-900 mb-4">📦 Como acompanhar meu pedido?</h3>
+              <p class="text-gray-700 leading-relaxed">Após a confirmação do pagamento, você receberá um código de rastreamento por email para acompanhar sua entrega em tempo real.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-2xl">
+              <h3 class="font-bold text-xl text-gray-900 mb-4">🔄 Posso devolver o produto?</h3>
+              <p class="text-gray-700 leading-relaxed">Sim! Aceitamos devoluções dentro de 30 dias após a entrega, conforme nossa política de satisfação garantida.</p>
+            </div>
+          </div>
+          
+          <div class="space-y-8">
+            <div class="bg-gray-50 p-8 rounded-2xl">
+              <h3 class="font-bold text-xl text-gray-900 mb-4">🚚 Qual o prazo de entrega?</h3>
+              <p class="text-gray-700 leading-relaxed">O prazo de entrega é de até 24 horas, dependendo da sua região. Enviamos para todo o Brasil!</p>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-2xl">
+              <h3 class="font-bold text-xl text-gray-900 mb-4">⏰ Em quanto tempo vejo resultados?</h3>
+              <p class="text-gray-700 leading-relaxed">A maioria das mulheres nota os primeiros resultados em 1-2 semanas. Para resultados máximos, recomendamos uso por 3 meses.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-2xl">
+              <h3 class="font-bold text-xl text-gray-900 mb-4">🌿 É seguro para peles sensíveis?</h3>
+              <p class="text-gray-700 leading-relaxed">Sim! Nossa fórmula é feita com ingredientes naturais e foi desenvolvida especialmente para todos os tipos de pele, inclusive as mais sensíveis.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="text-center mt-16">
+          <a href="#oferta" class="inline-flex items-center px-12 py-5 hero-gradient text-white font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-500 glow">
+            <span class="mr-3 text-2xl">🚀</span> QUERO COMEÇAR AGORA - PAGUE NA ENTREGA
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Footer Content -->
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+          <!-- Logo and Description -->
+          <div class="md:col-span-2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1734868164431_logo-pc-branco.svg.webp?alt=media&token=vtk_74Itjo93fhZg58rgDfsqK6gdjhG2" alt="Logo Amazolé" class="w-40 mb-6" />
+            <p class="text-gray-300 leading-relaxed max-w-md">
+              Transformamos a vida de milhares de mulheres com produtos naturais e eficazes. 
+              Sua pele lisinha, clara e uniforme está a um clique de distância.
+            </p>
+          </div>
+          
+          <!-- Payment Methods -->
+          <div>
+            <h4 class="font-bold text-lg mb-4">Formas de Pagamento - PAGUE NA ENTREGA</h4>
+            <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1725154664873_pagamentofooter.png.webp?alt=media&token=vtk_74Itjo93fhZg58rgDfsqK6gdjhG2" alt="Formas de pagamento" class="w-48 mb-4" />
+            <h4 class="font-bold text-lg mb-4">Entrega - PAGUE NA ENTREGA</h4>
+            <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1725154717665_correios.png.webp?alt=media&token=vtk_74Itjo93fhZg58rgDfsqK6gdjhG2" alt="Correios" class="w-32" />
+          </div>
+          
+          <!-- Contact -->
+          <div>
+            <h4 class="font-bold text-lg mb-4">Atendimento</h4>
+            <div class="space-y-3 text-gray-300">
+              <p><strong>WhatsApp:</strong> <a href="#" onclick="openWhatsAppModal()" class="text-green-400 hover:text-green-300 transition cursor-pointer">Clique para falar conosco</a></p>
+              <p><strong>Email:</strong> <a href="mailto:vosnegocios@gmail.com" class="text-blue-400 hover:text-blue-300 transition">vosnegocios@gmail.com</a></p>
+              <p class="text-sm">Horário: Segunda a Sexta, 9h às 18h</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Security Badge -->
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center mb-4 md:mb-0">
+            <img src="https://firebasestorage.googleapis.com/v0/b/voltk-homologacao.appspot.com/o/compressed_1725155442197_seguro.png.webp?alt=media&token=vtk_74Itjo93fhZg58rgDfsqK6gdjhG2" alt="Site Seguro" class="w-16 mr-4" />
+            <span class="text-gray-400 text-sm">Site 100% seguro e protegido</span>
+          </div>
+          
+          <div class="text-center text-gray-400 text-sm">
+            <p>© 2024 Amazolé. Todos os direitos reservados.</p>
+            <div class="mt-2">
+              <a href="#" class="hover:text-white transition mr-4">Termos de Uso</a>
+              <a href="#" class="hover:text-white transition mr-4">Política de Privacidade</a>
+              <a href="#" class="hover:text-white transition">Trocas e Devoluções</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Modal -->
+    <div id="whatsappModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[10000] hidden p-4">
+      <div class="bg-white rounded-3xl max-w-md w-full max-h-[90vh] relative shadow-2xl overflow-hidden">
+        <!-- Modal Content Container with Scroll -->
+        <div class="max-h-[90vh] overflow-y-auto">
+          <!-- Close Button -->
+          <button onclick="closeWhatsAppModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-bold z-10">&times;</button>
+
+          <!-- Header -->
+          <div class="text-center p-6 pb-4">
+            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.525 3.488"/>
+              </svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">WhatsApp</h3>
+            <p class="text-gray-600 text-sm md:text-base">Atendimento Online</p>
+          </div>
+
+          <!-- Content -->
+          <div class="px-6 pb-4">
+            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-4">
+              <h4 class="font-bold text-yellow-800 mb-2 text-sm md:text-base">Atendimento em alta demanda</h4>
+              <p class="text-yellow-700 text-xs md:text-sm">Devido ao grande número de pedidos, nosso atendimento pode estar mais lento que o habitual.</p>
+            </div>
+
+            <p class="text-gray-700 mb-4 text-sm md:text-base">
+              <strong>Garanta já o seu pedido, antes que acabe!</strong>
+            </p>
+
+            <p class="text-gray-600 text-xs md:text-sm mb-6">
+              Garanta já antes que Acabe! Últimas unidades disponíveis! Clique no botão abaixo para garantir sua compra com segurança.
+            </p>
+          </div>
+
+          <!-- Product Options -->
+          <div class="px-6 pb-6 space-y-3">
+            <!-- Produto 1 -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow duration-200">
+              <div class="text-left">
+                <h4 class="font-bold text-base md:text-lg text-gray-900 mb-1">1 Clareador Amazolé</h4>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xl md:text-2xl font-black text-gray-900">R$ 137,00</span>
+                </div>
+                <a href="https://entrega.logzz.com.br/pay/mem8yv650/1-frasco-principal" target="_blank" class="block w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 text-xs md:text-sm text-center">
+                  COMPRAR AGORA - PAGUE NA ENTREGA
+                </a>
+                <p class="text-xs text-gray-500 mt-1">Formas de pagamento</p>
+              </div>
+            </div>
+
+            <!-- Produto 2 - MAIS POPULAR -->
+            <div class="bg-gradient-to-br from-yellow-400 to-orange-500 border-2 border-yellow-300 rounded-xl p-4 relative hover:shadow-lg transition-shadow duration-200">
+              <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                MAIS POPULAR
+              </div>
+              <div class="text-left pt-2">
+                <h4 class="font-bold text-base md:text-lg text-gray-900 mb-1">Clareador + Sabonete em Pasta</h4>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xl md:text-2xl font-black text-gray-900">R$ 197,00</span>
+                  <span class="text-xs md:text-sm text-green-700 font-semibold">Economia de R$ 82,98</span>
+                </div>
+                <a href="https://entrega.logzz.com.br/pay/mem8yv650/2-frasco-19700-principal" target="_blank" class="block w-full bg-gray-900 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-all duration-200 text-xs md:text-sm text-center">
+                  COMPRAR AGORA - PAGUE NA ENTREGA
+                </a>
+              </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow duration-200">
+              <div class="text-left">
+                <h4 class="font-bold text-base md:text-lg text-gray-900 mb-1">3 Clareadores</h4>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xl md:text-2xl font-black text-gray-900">R$ 297,00</span>
+                </div>
+                <a href="https://entrega.logzz.com.br/pay/mem8yv650/3-frasco-29700" target="_blank" class="block w-full bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-200 text-xs md:text-sm text-center">
+                  COMPRAR AGORA - PAGUE NA ENTREGA
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Close Button -->
+          <div class="px-6 pb-6">
+            <button onclick="closeWhatsAppModal()" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-3 px-4 rounded-xl transition-colors duration-200 text-sm md:text-base">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <button onclick="openWhatsAppModal()" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transform hover:scale-110 transition-all duration-300 z-[10000] glow">
+      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.525 3.488"/>
+      </svg>
+    </button>
+
+    <!-- Scripts for smooth interactions -->
+    <script>
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Add parallax effect to floating elements
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.parallax');
+        
+        parallaxElements.forEach(element => {
+          const speed = 0.5;
+          element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+
+      // WhatsApp Modal Functions
+      function openWhatsAppModal() {
+        const modal = document.getElementById('whatsappModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('opacity-100');
+        modal.querySelector('div').classList.add('scale-100');
+        
+        document.body.style.overflow = 'hidden';
+        // Prevent background scroll on mobile
+        if (window.innerWidth <= 768) {
+          document.body.style.position = 'fixed';
+          document.body.style.width = '100%';
+        }
+      }
+
+      function closeWhatsAppModal() {
+        const modal = document.getElementById('whatsappModal');
+        modal.classList.remove('opacity-100');
+        modal.querySelector('div').classList.remove('scale-100');
+        
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 300);
+        
+        document.body.style.overflow = 'auto';
+        // Restore scroll on mobile
+        if (window.innerWidth <= 768) {
+          document.body.style.position = '';
+          document.body.style.width = '';
+        }
+      }
+
+      function selectProduct(product) {
+        let message = '';
+
+        if (product.includes('1 Clareador Amazolé')) {
+          message = 'Olá! Gostaria de adquirir o 1 Clareador Amazolé por R$ 137,00. Como posso prosseguir com a compra?';
+        } else if (product.includes('Kit Completo')) {
+          message = 'Olá! Gostaria de adquirir o Kit Completo (Clareador + Sabonete em Pasta) por R$ 197,00. Como posso prosseguir com a compra?';
+        } else if (product.includes('3 Clareadores')) {
+          message = 'Olá! Gostaria de adquirir os 3 Clareadores por R$ 297,00. Como posso prosseguir com a compra?';
+        } else {
+          message = `Olá! Gostaria de adquirir o ${product} do Clareador Amazolé.`;
+        }
+
+        const whatsappUrl = `https://wa.me/5592999112670?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+        closeWhatsAppModal();
+      }
+
+      // Close modal when clicking outside
+      document.getElementById('whatsappModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeWhatsAppModal();
+        }
+      });
+
+      // Prevent modal content clicks from closing modal
+      document.querySelector('#whatsappModal > div').addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+
+      // Improve touch experience on mobile
+      if ('ontouchstart' in window) {
+        document.querySelectorAll('#whatsappModal button').forEach(button => {
+          button.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+          });
+          button.addEventListener('touchend', function() {
+            this.style.transform = '';
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
